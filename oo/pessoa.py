@@ -3,6 +3,8 @@
 # Método, é uma função que pertence a uma classe. Sempre está relacionado a um objeto
 # self = em java e C# usamos this
 class Pessoa:
+    olhos = 2
+
     def __init__(self, *filhos, nome=None, idade=35):
         self.idade = idade
         self.nome = nome
@@ -25,6 +27,14 @@ if __name__ == '__main__':
     tiago.sobrenome = 'Tardelli'
     print(tiago.sobrenome)
     del tiago.filhos
+    luciano.olhos = 1
+    del luciano.olhos
     print(tiago.__dict__)
     print(luciano.__dict__)
+    Pessoa.olhos = 3
+    print(Pessoa.olhos)
+    print(tiago.olhos)
+    print(luciano.olhos)
+    print(id(Pessoa.olhos), id(luciano.olhos), id(tiago.olhos))
+
 
